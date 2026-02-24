@@ -1,27 +1,86 @@
-import React from 'react'
-import { assets } from '../assets/assets'
+import React from "react";
+import "./Hero.css";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
+import { assets } from "../assets/assets";
 
 const Hero = () => {
   return (
-    <div className='flex flex-col sm:flex-row border border-gray-400'>
-        {/*Hero left side*/}
-        <div className='w-full sm:w-1/2 flex items-center justify-center py-10 sm:py-0'>
-        <div className='text-[#414141]'>
-            <div className='flex items-center gap-2'>
-                <p className='w-8 md:w-11 h-[2px] bg-[#414141]'></p>
-                <p className='font-medium text-sm md:text-base'>OUR BESTSELLERS</p>
-            </div>
-            <h1 className='prata-regular text-3xl sm:py-3 lg:text-5xl leading-relaxed'>Latest Arrivals</h1>
-            <div className='flex items-center gap-2'>
-                <p className='font-semibold text-sm md:text-base'>SHOP NOW</p>
-                <p className='w-8 md:w-11 h-[1px] bg-[#414141]'></p>
-            </div>
-        </div>
-        </div>
-        {/*Hero Right Side*/}
-        <img className='w-8 sm:w-1/2' src={assets.hero_img} alt="" />
-    </div>
-  )
-}
+    <div className="w-full">
+      <Swiper
+        modules={[Pagination, Autoplay]}
+        pagination={{ clickable: true }}
+        autoplay={{ delay: 4000 }}
+        loop
+        className="h-[90vh] hero-swiper"
+      >
+        {/* Slide 1 */}
+        <SwiperSlide>
+          <div
+            className="hero-slide"
+            style={{
+              backgroundImage: `url(${assets.slider})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+            }}
+          >
+            {/* LEFT CONTENT */}
+            <div className="max-w-xl space-y-5">
+              <h1 className="text-red-500 text-5xl md:text-6xl font-bold font-serif">
+                Sale 20% Off
+              </h1>
 
-export default Hero
+              <h2 className="text-[#0f2d35] text-6xl font-bold font-serif">
+                On Everything
+              </h2>
+
+              <p className="text-gray-600 max-w-md">
+                Discover the latest fashion trends and enjoy amazing discounts.
+              </p>
+
+              <button className="bg-red-500 text-white px-8 py-3 border border-red-500 rounded hover:bg-white hover:text-red-500 transition">
+                Shop Now
+              </button>
+            </div>
+          </div>
+        </SwiperSlide>
+
+        {/* Slide 2 */}
+        <SwiperSlide>
+          <div
+            className="hero-slide"
+            style={{
+              backgroundImage: `url(${assets.slider})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+            }}
+          >
+            <div className="max-w-xl space-y-5">
+              <h1 className="text-red-500 text-5xl md:text-6xl font-bold font-serif">
+                Sale 20% Off
+              </h1>
+
+              <h2 className="text-[#0f2d35] text-6xl font-bold font-serif">
+                On Everything
+              </h2>
+
+              <p className="text-gray-600 max-w-md">
+                Upgrade your wardrobe with trending styles.
+              </p>
+
+              <button className="bg-red-500 text-white px-8 py-3 border border-red-500 rounded hover:bg-white hover:text-red-500 transition">
+                Shop Now
+              </button>
+            </div>
+          </div>
+        </SwiperSlide>
+      </Swiper>
+    </div>
+  );
+};
+
+export default Hero;

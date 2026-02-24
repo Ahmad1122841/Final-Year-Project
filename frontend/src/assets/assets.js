@@ -56,6 +56,7 @@ import p_img52 from './p_img52.png'
 
 
 import logo from './logo.png'
+import logo1 from './logo1.png'
 import hero_img from './hero_img.png'
 import cart_icon from './cart_icon.png'
 import bin_icon from './bin_icon.png'
@@ -73,9 +74,11 @@ import contact_img from './contact_img.png'
 import razorpay_logo from './razorpay_logo.png'
 import stripe_logo from './stripe_logo.png'
 import cross_icon from './cross_icon.png'
+import slider from  './slider.png'
 
 export const assets = {
     logo,
+    logo1,
     hero_img,
     cart_icon,
     dropdown_icon,
@@ -86,13 +89,15 @@ export const assets = {
     star_dull_icon,
     star_icon,
     bin_icon,
+    p_img13,
     support_img,
     menu_icon,
     about_img,
     contact_img,
     razorpay_logo,
     stripe_logo,
-    cross_icon
+    cross_icon,
+    slider
 }
 
 export const products = [
@@ -110,7 +115,7 @@ export const products = [
     },
     {
         _id: "aaaab",
-        name: "Men Round Neck Pure Cotton T-shirt",
+        name: "Men Round Neck Cotton T-shirt",
         description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
         price: 200,
         image: [p_img2_1,p_img2_2,p_img2_3,p_img2_4],

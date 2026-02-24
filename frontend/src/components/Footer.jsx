@@ -1,44 +1,63 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { assets } from '../assets/assets'
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Footer = () => {
+
+          useEffect(() => {
+      
+          AOS.init({
+              duration: 2000,
+              once: true
+          });
+      });
+
   return (
-    <div>
-        <div className='flex flex-col sm:grid grid-cols-[3fr_1fr_1fr] gap-14 my-10 mt-40 text-sm'>
+    <footer data-aos="fade-right" className='bg-[#E6E6E4] text-gray-700 mt-32'>
+      
+      {/* Main Footer */}
+      <div className='max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 sm:grid-cols-3 gap-12 text-sm'>
 
-            <div>
-                <img src={assets.logo} className='mb-5 w-32' alt="" />
-                <p className='w-full md:w-2/3 text-gray-600'>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam delectus expedita numquam nam maiores blanditiis praesentium deserunt omnis vero esse ut voluptate odit doloremque velit repudiandae, iure aliquid! Ea, veniam.
-                </p>
-            </div> 
-
-            <div>
-                <p className='text-xl font-medium mb-5'>COMPANY</p>
-                <ul className='flex flex-col gap-1 text-gray-600'>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Delivery</li>
-                    <li>Privacy policy</li>
-                </ul>
-            </div>
-
-            <div>
-                <p className='text-xl font-medium mb-5'>GET IN TOUCH</p>
-                <ul className='flex flex-col gap-1 text-gray-600'>
-                    <li>+1-212-456-7890</li>
-                    <li>contact@AFCodersCumminity.com</li>
-                </ul>
-            </div>
-
-        </div>
-
+        {/* Logo + About */}
         <div>
-            <hr />
-            <p className='py-5 text-sm text-center'>Copyright 2026@ AF.com-All Right Reserved.</p>
+          <img src={assets.logo} className='mb-6 w-36' alt="Logo" />
+          <p className='text-gray-500 leading-relaxed'>
+            We provide high-quality products with modern design and
+            excellent customer service. Your satisfaction is our priority.
+          </p>
         </div>
 
-    </div>
+        {/* Company Links */}
+        <div>
+          <p className='text-lg font-semibold mb-6 text-gray-800'>Company</p>
+          <ul className='space-y-3'>
+            <li className='hover:text-black cursor-pointer transition'>Home</li>
+            <li className='hover:text-black cursor-pointer transition'>About Us</li>
+            <li className='hover:text-black cursor-pointer transition'>Delivery</li>
+            <li className='hover:text-black cursor-pointer transition'>Privacy Policy</li>
+          </ul>
+        </div>
+
+        {/* Contact */}
+        <div>
+          <p className='text-lg font-semibold mb-6 text-gray-800'>Get In Touch</p>
+          <ul className='space-y-3'>
+            <li>+1-212-456-7890</li>
+            <li>contact@AFCodersCommunity.com</li>
+          </ul>
+        </div>
+
+      </div>
+
+      {/* Bottom Section */}
+      <div className='border-t border-gray-300'>
+        <p className='text-center text-gray-500 text-sm py-6'>
+          © 2026 AF Coders Community. All Rights Reserved.
+        </p>
+      </div>
+
+    </footer>
   )
 }
 

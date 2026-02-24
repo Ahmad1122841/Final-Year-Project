@@ -9,25 +9,25 @@ const Navbar = () => {
 
     const {setShowSearch, getCartCount} = useContext(ShopContext);
   return (
-    <div className='flex items-center justify-between py-5 font-medium'>
+    <div className='sticky top-0 z-50 bg-white flex items-center justify-between py-5 font-medium'>
 
-        <Link to='/'><img src={assets.logo} className='w-36' alt="" /></Link>
+        <Link to='/'><img src={assets.logo1} className='w-36 scale-120' alt="" /></Link>
 
-        <ul className='hidden sm:flex gap-5 text-sm text-gray-700 '>
+        <ul className='hidden sm:flex gap-5 text-sm text-gray-700 font-bold'>
 
-        <NavLink to='/' className='flex flex-col items-center gap-1' >  
+        <NavLink to='/' className='flex flex-col items-center gap-1 hover:text-red-500 transition-colors duration-200 text-red-500' >  
             <p>HOME</p>
             <hr className='w-2/4 border-none h-[1.5px] bg-gray-700 hidden'/>
         </NavLink>
-        <NavLink to='/collection' className='flex flex-col items-center gap-1' >  
+        <NavLink to='/collection' className='flex flex-col items-center gap-1 hover:text-red-500 transition-colors duration-200' >  
             <p>COLLECTION</p>
             <hr className='w-2/4 border-none h-[1.5px] bg-gray-700 hidden'/>
         </NavLink>
-        <NavLink to='/about' className='flex flex-col items-center gap-1' >  
+        <NavLink to='/about' className='flex flex-col items-center gap-1 hover:text-red-500 transition-colors duration-200' >  
             <p>ABOUT</p>
             <hr className='w-2/4 border-none h-[1.5px] bg-gray-700 hidden'/>
         </NavLink>
-        <NavLink to='/contact' className='flex flex-col items-center gap-1' >  
+        <NavLink to='/contact' className='flex flex-col items-center gap-1 hover:text-red-500 transition-colors duration-200' >  
             <p>CONTACT</p>
             <hr className='w-2/4 border-none h-[1.5px] bg-gray-700 hidden'/>
         </NavLink>
@@ -54,7 +54,7 @@ const Navbar = () => {
             <img onClick={()=>setvisible(true)} src={assets.menu_icon} className='w-5 cursor-pointer sm:hidden' alt="" />
         </div>
         {/*Sidebar menu for small screen*/}
-        <div className={`absolute top-0 right-0 bottom-0 overflow-hidden bg-white transition-all ${visible ? 'w-full' : 'w-0'}`}>
+        <div className={`fixed top-0 right-0 h-screen bg-white z-[999] transition-all duration-300 ${visible ? 'w-full' : 'w-0'}`}>
             <div className='flex flex-col text-gray-600'>
                 <div onClick={()=>setvisible(false)} className='flex items-center gap-4 p-3 cursor-pointer'>
                     <img className='h-4 rotate-180' src={assets.dropdown_icon} alt="" />
